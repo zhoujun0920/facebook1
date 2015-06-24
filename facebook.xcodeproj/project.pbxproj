@@ -13,6 +13,8 @@
 		5AE711FA1B33CE7E00768E2E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AE711F91B33CE7E00768E2E /* Images.xcassets */; };
 		5AE711FD1B33CE7E00768E2E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AE711FB1B33CE7E00768E2E /* LaunchScreen.xib */; };
 		5AE712091B33CE7E00768E2E /* facebookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE712081B33CE7E00768E2E /* facebookTests.swift */; };
+		5AE712131B33CE9300768E2E /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE712121B33CE9300768E2E /* FBSDKCoreKit.framework */; };
+		5AE712151B33CEA100768E2E /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE712141B33CEA100768E2E /* FBSDKLoginKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,9 @@
 		5AE712021B33CE7E00768E2E /* facebookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = facebookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AE712071B33CE7E00768E2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5AE712081B33CE7E00768E2E /* facebookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = facebookTests.swift; sourceTree = "<group>"; };
+		5AE712121B33CE9300768E2E /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		5AE712141B33CEA100768E2E /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		5AE712161B33CEE700768E2E /* facebook_Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = facebook_Header.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +48,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AE712151B33CEA100768E2E /* FBSDKLoginKit.framework in Frameworks */,
+				5AE712131B33CE9300768E2E /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +66,8 @@
 		5AE711E41B33CE7E00768E2E = {
 			isa = PBXGroup;
 			children = (
+				5AE712141B33CEA100768E2E /* FBSDKLoginKit.framework */,
+				5AE712121B33CE9300768E2E /* FBSDKCoreKit.framework */,
 				5AE711EF1B33CE7E00768E2E /* facebook */,
 				5AE712051B33CE7E00768E2E /* facebookTests */,
 				5AE711EE1B33CE7E00768E2E /* Products */,
@@ -79,6 +88,7 @@
 			children = (
 				5AE711F21B33CE7E00768E2E /* AppDelegate.swift */,
 				5AE711F41B33CE7E00768E2E /* ViewController.swift */,
+				5AE712161B33CEE700768E2E /* facebook_Header.h */,
 				5AE711F61B33CE7E00768E2E /* Main.storyboard */,
 				5AE711F91B33CE7E00768E2E /* Images.xcassets */,
 				5AE711FB1B33CE7E00768E2E /* LaunchScreen.xib */,
@@ -342,9 +352,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/junzhou/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = facebook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = facebook/facebook_Header.h;
 			};
 			name = Debug;
 		};
@@ -352,9 +367,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/junzhou/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = facebook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = facebook/facebook_Header.h;
 			};
 			name = Release;
 		};
